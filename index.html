@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Zanzibar — Investment Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --gold: #bb7f25;
+        --gold-dim: rgba(187, 127, 37, 0.15);
+        --gold-glow: rgba(187, 127, 37, 0.35);
+        --white: #ffffff;
+        --gray-100: #2a2a2a;
+        --gray-300: #555555;
+        --gray-500: #888888;
+        --gray-700: #cccccc;
+        --bg-s1: #fafafa;
+        --bg-s2: #f5f5f5;
+        --bg-s3: #f8f8f8;
+        --bg-s4: #f3f3f3;
+        --bg-s5: #f7f7f7;
+        --bg-s6: #f4f4f4;
+        --bg-footer: #e8e8e8;
+      }
+      body {
+        font-family: "Lato", sans-serif;
+        background: var(--bg-s1);
+        color: var(--gray-100);
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes drawLine {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes countUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero {
+        background: #ffffff;
+        padding: 80px 40px 90px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-content {
+        max-width: 960px;
+        width: 100%;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 60%,
+          rgba(187, 127, 37, 0.08) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-eyebrow {
+        font-family: "Lato", sans-serif;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease 0.2s both;
+      }
+      .hero-title {
+        font-size: clamp(38px, 6vw, 68px);
+        font-weight: 700;
+        color: #1a1a1a;
+        line-height: 1.1;
+        margin-bottom: 12px;
+        animation: fadeUp 1s ease 0.3s both;
+      }
+      .hero-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .hero-subtitle {
+        font-family: "Lato", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--gray-500);
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        animation: fadeUp 1s ease 0.5s both;
+      }
+      .hero-divider {
+        width: 60px;
+        height: 1px;
+        background: var(--gold);
+        margin: 0 auto 40px;
+        animation: drawLine 1s ease 0.8s both;
+      }
+      .hero-tagline {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 18px;
+        color: var(--gray-300);
+        max-width: 520px;
+        margin: 0 auto;
+        line-height: 1.7;
+        animation: fadeUp 1s ease 0.9s both;
+      }
+
+      .stats-bar {
+        background: var(--white);
+        padding: 0 24px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+      .stat-item {
+        padding: 28px 48px;
+        text-align: center;
+        border-right: 1px solid #ece8e0;
+        animation: countUp 0.7s ease both;
+      }
+      .stat-item:last-child {
+        border-right: none;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .stat-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gray-500);
+        font-weight: 700;
+      }
+      @media (max-width: 680px) {
+        .stats-bar {
+          padding: 0;
+          align-items: stretch;
+        }
+        .stat-item {
+          width: 50%;
+          border-right: none;
+          padding: 24px 20px;
+          border-bottom: 1px solid #ece8e0;
+        }
+        .stat-item:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+      }
+
+      .section {
+        padding: 70px 40px;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      .section-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .section-title {
+        font-size: clamp(26px, 4vw, 40px);
+        font-weight: 700;
+        color: var(--gray-100);
+        line-height: 1.2;
+        margin-bottom: 22px;
+      }
+      .section-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .section-body {
+        font-size: 16px;
+        line-height: 1.85;
+        color: var(--gray-300);
+        font-weight: 300;
+      }
+
+      .gold-rule {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0;
+        opacity: 0.4;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+      @media (max-width: 680px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+        margin-top: 48px;
+      }
+      .pillar-card {
+        background: var(--white);
+        border: 1px solid #ece8e0;
+        border-top: 3px solid var(--gold);
+        padding: 28px 24px;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .pillar-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(187, 127, 37, 0.12);
+      }
+      .pillar-icon {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      .pillar-title {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        font-weight: 600;
+        color: var(--gray-100);
+        margin-bottom: 10px;
+      }
+      .pillar-desc {
+        font-size: 14px;
+        line-height: 1.75;
+        color: var(--gray-500);
+        font-weight: 300;
+      }
+
+      .highlight-band {
+        background: var(--bg-s2);
+        border-top: 1px solid #ece8e0;
+        border-bottom: 1px solid #ece8e0;
+        padding: 70px 40px;
+      }
+      .highlight-inner {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      .quote-block {
+        border-left: 3px solid var(--gold);
+        padding: 24px 32px;
+        background: var(--white);
+        margin: 40px 0;
+      }
+      .quote-text {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 22px;
+        line-height: 1.6;
+        color: var(--gray-100);
+        margin-bottom: 12px;
+      }
+      .quote-attr {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      .protection-list {
+        margin: 32px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .protection-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 22px;
+        background: var(--white);
+        border: 1px solid #ece8e0;
+        transition: border-color 0.3s;
+      }
+      .protection-item:hover {
+        border-color: var(--gold);
+      }
+      .protection-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin-top: 6px;
+        flex-shrink: 0;
+      }
+      .protection-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--gray-300);
+      }
+
+      .infra-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-top: 40px;
+      }
+      @media (max-width: 680px) {
+        .infra-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      .infra-item {
+        background: var(--white);
+        border: 1px solid #ece8e0;
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+      }
+      .infra-item::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--gold), transparent);
+        animation: drawLine 1.5s ease 0.5s both;
+      }
+      .infra-item-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .infra-item-title {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--gray-100);
+        margin-bottom: 12px;
+      }
+      .infra-item-body {
+        font-size: 14px;
+        line-height: 1.75;
+        color: var(--gray-500);
+      }
+
+      .cta-band {
+        background: #ffffff;
+        padding: 80px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-band::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(187, 127, 37, 0.08) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+      .cta-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 18px;
+        line-height: 1.2;
+      }
+      .cta-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .cta-body {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--gray-500);
+        max-width: 480px;
+        margin: 0 auto 40px;
+        line-height: 1.8;
+      }
+      .cta-badge {
+        display: inline-block;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 14px 36px;
+        transition: background 0.3s;
+        cursor: default;
+      }
+      .cta-badge:hover {
+        background: var(--gold-dim);
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(14px) scale(0.995);
+        filter: blur(1.5px);
+        will-change: opacity, transform, filter;
+        transition:
+          opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 1.05s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-reveal,
+        .scroll-reveal.visible {
+          opacity: 1;
+          transform: none;
+          filter: none;
+          transition: none;
+        }
+      }
+
+      .stats-bar ~ .section,
+      .stats-bar ~ .highlight-band {
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Investment Opportunity</div>
+        <h1 class="hero-title">Why <em>Zanzibar</em></h1>
+        <div class="hero-subtitle">Indian Ocean · East Africa · Tanzania</div>
+        <div class="hero-divider"></div>
+        <p class="hero-tagline">
+          A market where beauty is matched by confidence
+        </p>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+    <div class="stats-bar">
+      <div class="stat-item" style="animation-delay: 0.1s">
+        <div class="stat-num">736K+</div>
+        <div class="stat-label">Visitors in 2024</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 0.2s">
+        <div class="stat-num">+15.4%</div>
+        <div class="stat-label">Tourism Growth</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 0.3s">
+        <div class="stat-num">21,153m²</div>
+        <div class="stat-label">New Terminal Area</div>
+      </div>
+      <div class="stat-item" style="animation-delay: 0.4s">
+        <div class="stat-num">2023</div>
+        <div class="stat-label">Investment Act</div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="section scroll-reveal">
+      <div class="section-label">The Case</div>
+      <div class="two-col">
+        <div>
+          <h2 class="section-title">
+            Natural appeal reinforced by <em>real fundamentals</em>
+          </h2>
+        </div>
+        <div>
+          <p class="section-body">
+            Zanzibar's natural appeal is immediate — remarkable coastline, clear
+            water, and a cultural identity that gives the island lasting global
+            appeal. But for serious investors, beauty alone is never enough.
+            What makes Zanzibar compelling is that its lifestyle value is now
+            being reinforced by the factors that make a market feel safer to
+            enter.
+          </p>
+        </div>
+      </div>
+      <div class="quote-block scroll-reveal">
+        <p class="quote-text">
+          "This is not simply a beautiful island. It is a market where the
+          fundamentals increasingly support the safety of the investment case as
+          well as the upside."
+        </p>
+        <div class="quote-attr">Investment Thesis</div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="highlight-band">
+      <div class="highlight-inner">
+        <div class="section-label">Key Drivers</div>
+        <h2 class="section-title" style="margin-bottom: 8px">
+          Four pillars of a <em>compelling market</em>
+        </h2>
+        <p class="section-body" style="max-width: 600px">
+          Sustained tourism growth, improving infrastructure, stronger
+          investment frameworks, and a government actively positioning to
+          attract private capital.
+        </p>
+        <div class="pillar-grid">
+          <div class="pillar-card scroll-reveal">
+            <div class="pillar-icon">✈</div>
+            <div class="pillar-title">Tourism Momentum</div>
+            <p class="pillar-desc">
+              736,755 international visitors in 2024, up 15.4% from 2023. Growth
+              backed by real international demand, not speculation alone.
+            </p>
+          </div>
+          <div class="pillar-card scroll-reveal" style="transition-delay: 0.1s">
+            <div class="pillar-icon">🏗</div>
+            <div class="pillar-title">Infrastructure</div>
+            <p class="pillar-desc">
+              New Terminal 3 at AAKIA airport and major World Bank–backed urban
+              investment in roads, drainage, mobility, and service delivery.
+            </p>
+          </div>
+          <div class="pillar-card scroll-reveal" style="transition-delay: 0.2s">
+            <div class="pillar-icon">⚖</div>
+            <div class="pillar-title">Legal Framework</div>
+            <p class="pillar-desc">
+              Protections against nationalization, freely convertible currency
+              transfers, and access to ICSID international arbitration.
+            </p>
+          </div>
+          <div class="pillar-card scroll-reveal" style="transition-delay: 0.3s">
+            <div class="pillar-icon">🌍</div>
+            <div class="pillar-title">Regional Stability</div>
+            <p class="pillar-desc">
+              Tanzania is widely regarded as one of the more politically stable
+              countries in East Africa — a critical foundation for long-term
+              capital deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="section scroll-reveal">
+      <div class="section-label">Tourism</div>
+      <div class="two-col">
+        <div>
+          <h2 class="section-title">
+            Demand backed by <em>numbers, not narrative</em>
+          </h2>
+          <p class="section-body">
+            In 2024, Zanzibar recorded 736,755 international visitors — up 15.4%
+            from 2023. That kind of growth supports underlying demand for
+            hospitality, rental accommodation, and well-positioned real estate.
+          </p>
+          <br />
+          <p class="section-body">
+            Investors are not entering based on speculation alone, but on a
+            rising flow of international demand that underpins asset value.
+          </p>
+        </div>
+        <div>
+          <div
+            style="
+              background: var(--white);
+              border: 1px solid #ece8e0;
+              padding: 36px;
+              margin-top: 4px;
+            "
+          >
+            <div
+              style="
+                font-size: 11px;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--gold);
+                font-weight: 700;
+                margin-bottom: 20px;
+              "
+            >
+              Visitor Growth
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px">
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <span style="font-size: 13px; color: var(--gray-500)"
+                    >2023</span
+                  >
+                  <span
+                    style="
+                      font-size: 13px;
+                      font-weight: 700;
+                      color: var(--gray-100);
+                    "
+                    >638,524</span
+                  >
+                </div>
+                <div style="height: 6px; background: #f0ede8; border-radius: 0">
+                  <div
+                    style="
+                      height: 6px;
+                      width: 87%;
+                      background: rgba(187, 127, 37, 0.4);
+                      border-radius: 0;
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <span style="font-size: 13px; color: var(--gray-500)"
+                    >2024</span
+                  >
+                  <span
+                    style="
+                      font-size: 13px;
+                      font-weight: 700;
+                      color: var(--gold);
+                    "
+                    >736,755</span
+                  >
+                </div>
+                <div style="height: 6px; background: #f0ede8; border-radius: 0">
+                  <div
+                    style="
+                      height: 6px;
+                      width: 100%;
+                      background: var(--gold);
+                      border-radius: 0;
+                      animation: drawLine 1.5s ease 0.5s both;
+                    "
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 24px;
+                padding-top: 20px;
+                border-top: 1px solid #ece8e0;
+                text-align: center;
+              "
+            >
+              <span
+                style="
+                  font-family: &quot;Playfair Display&quot;, serif;
+                  font-size: 38px;
+                  font-weight: 700;
+                  color: var(--gold);
+                "
+                >+15.4%</span
+              >
+              <div
+                style="
+                  font-size: 11px;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--gray-500);
+                  margin-top: 4px;
+                "
+              >
+                YoY growth
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="section">
+      <div class="section-label scroll-reveal">Infrastructure</div>
+      <h2 class="section-title scroll-reveal" style="transition-delay: 0.08s">
+        Built to <em>receive</em> the world
+      </h2>
+      <p
+        class="section-body scroll-reveal"
+        style="max-width: 620px; transition-delay: 0.14s"
+      >
+        Stronger infrastructure reduces friction, improves accessibility, and
+        supports long-term asset value. Zanzibar's gateway is already upgraded —
+        and more is underway.
+      </p>
+      <div class="infra-row scroll-reveal" style="transition-delay: 0.2s">
+        <div class="infra-item scroll-reveal">
+          <div class="infra-item-label">Air Access</div>
+          <div class="infra-item-title">Terminal 3 — AAKIA Airport</div>
+          <p class="infra-item-body">
+            A new 21,153 m² international terminal opened in 2020, with further
+            airport improvements underway to handle growing international
+            passenger volumes.
+          </p>
+        </div>
+        <div class="infra-item scroll-reveal" style="transition-delay: 0.15s">
+          <div class="infra-item-label">Urban Investment</div>
+          <div class="infra-item-title">World Bank–Backed Development</div>
+          <p class="infra-item-body">
+            Major investment supporting roads, drainage, public space, mobility,
+            planning systems, and service delivery across the islands.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="highlight-band">
+      <div class="highlight-inner scroll-reveal">
+        <div class="section-label">Legal Protections</div>
+        <div class="two-col">
+          <div>
+            <h2 class="section-title">
+              Frameworks built for <em>capital confidence</em>
+            </h2>
+            <p class="section-body">
+              Recent reforms under the Tanzania Investment Act 2022 and the
+              Zanzibar Investment Act 2023 were designed to make the environment
+              more investment-friendly — with stronger institutions, appeals
+              mechanisms, digitized processes, and one-stop facilitation.
+            </p>
+          </div>
+          <div>
+            <div class="protection-list">
+              <div class="protection-item scroll-reveal">
+                <div class="protection-dot"></div>
+                <div class="protection-text">
+                  Guarantees against nationalization and expropriation of
+                  investor assets
+                </div>
+              </div>
+              <div
+                class="protection-item scroll-reveal"
+                style="transition-delay: 0.1s"
+              >
+                <div class="protection-dot"></div>
+                <div class="protection-text">
+                  Free transfer of capital, profits, and dividends in
+                  convertible currency
+                </div>
+              </div>
+              <div
+                class="protection-item scroll-reveal"
+                style="transition-delay: 0.2s"
+              >
+                <div class="protection-dot"></div>
+                <div class="protection-text">
+                  Access to international arbitration including ICSID-based
+                  procedures
+                </div>
+              </div>
+              <div
+                class="protection-item scroll-reveal"
+                style="transition-delay: 0.3s"
+              >
+                <div class="protection-dot"></div>
+                <div class="protection-text">
+                  Granted benefits preserved for a defined period — not amended
+                  to investor's detriment
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <div class="cta-band scroll-reveal">
+      <h2 class="cta-title scroll-reveal" style="transition-delay: 0.05s">
+        The <em>opportunity</em> is clear
+      </h2>
+      <p class="cta-body scroll-reveal" style="transition-delay: 0.14s">
+        Scarcity of prime coastal land. Rising international demand. Legal
+        protections. Political stability. A government actively working to
+        attract private capital. This is where the investment case is made.
+      </p>
+      <div class="cta-badge scroll-reveal" style="transition-delay: 0.22s">
+        Explore the Opportunity
+      </div>
+    </div>
+
+    <script>
+      const reveals = document.querySelectorAll(".scroll-reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -8% 0px",
+        },
+      );
+      reveals.forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
