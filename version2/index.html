@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Zanzibar — Investment Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --gold: #bb7f25;
+        --gold-light: #dfa855;
+        --white: #ffffff;
+        --dark: #121212;
+        --gray-100: #2a2a2a;
+        --gray-300: #555555;
+        --gray-500: #888888;
+        --bg-light: #faf8f5;
+      }
+      body {
+        font-family: "Lato", sans-serif;
+        background: var(--bg-light);
+        color: var(--gray-100);
+        overflow-x: hidden;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .serif {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* --- Hero Section --- */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 120%;
+        background: url("https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")
+          center/cover no-repeat;
+        z-index: 1;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(18, 18, 18, 0.4),
+          rgba(18, 18, 18, 0.8)
+        );
+        z-index: 2;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        color: var(--white);
+        max-width: 900px;
+        padding: 0 20px;
+      }
+      .hero-eyebrow {
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: var(--gold-light);
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .hero-title {
+        font-size: clamp(48px, 8vw, 96px);
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+      .hero-title em {
+        color: var(--gold-light);
+        font-style: italic;
+      }
+      .hero-divider {
+        width: 0;
+        height: 2px;
+        background: var(--gold-light);
+        margin: 30px auto;
+      }
+      .hero-tagline {
+        font-size: 20px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        opacity: 0.9;
+      }
+
+      /* --- Stats Bar --- */
+      .stats-wrapper {
+        position: relative;
+        z-index: 10;
+        margin-top: -60px;
+        padding: 0 20px;
+      }
+      .stats-bar {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        overflow: hidden;
+      }
+      .stat-item {
+        padding: 40px 30px;
+        text-align: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .stat-item:last-child {
+        border: none;
+      }
+      .stat-num {
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+      .stat-label {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gray-500);
+        font-weight: 700;
+      }
+
+      /* --- General Sections --- */
+      .section {
+        padding: 120px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .section-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 16px;
+        display: inline-block;
+        position: relative;
+      }
+      .section-label::after {
+        content: "";
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .section-title {
+        font-size: clamp(32px, 4vw, 48px);
+        font-weight: 700;
+        color: var(--gray-100);
+        line-height: 1.2;
+        margin-bottom: 30px;
+      }
+      .section-title em {
+        color: var(--gold);
+        font-style: italic;
+      }
+      .section-body {
+        font-size: 18px;
+        line-height: 1.8;
+        color: var(--gray-300);
+        margin-bottom: 24px;
+      }
+
+      /* --- Grid Layouts --- */
+      .split-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .image-reveal-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 4/5;
+        background: #eaeaea; /* Fallback color */
+      }
+      .image-reveal-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.2);
+      }
+
+      /* --- Pillars / Cards --- */
+      .bg-dark {
+        background: #ffffff;
+        color: var(--gray-100);
+        padding: 120px 20px;
+        border-top: 1px solid #ece8e0;
+        border-bottom: 1px solid #ece8e0;
+      }
+      .bg-dark .section-title {
+        color: var(--gray-100);
+      }
+      .bg-dark .section-body {
+        color: var(--gray-300);
+      }
+
+      .bg-dark .pillar-card {
+        background: #ffffff;
+        border: 1px solid #ece8e0;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.03);
+      }
+
+      .bg-dark .pillar-card:hover {
+        background: rgba(187, 127, 37, 0.04);
+        border-color: var(--gold);
+        transform: translateY(-8px);
+      }
+
+      .bg-dark .pillar-icon {
+        color: var(--gold);
+      }
+
+      .bg-dark .pillar-title {
+        color: var(--gray-100);
+      }
+
+      .bg-dark .pillar-desc {
+        color: var(--gray-500);
+      }
+
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+      }
+      .pillar-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px 30px;
+        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+        opacity: 0; /* Fallback for GSAP */
+      }
+      .pillar-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-10px);
+        border-color: var(--gold);
+      }
+      .pillar-icon {
+        font-size: 32px;
+        margin-bottom: 24px;
+      }
+      .pillar-title {
+        font-family: "Playfair Display", serif;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--white);
+      }
+      .pillar-desc {
+        font-size: 15px;
+        line-height: 1.7;
+        color: #999;
+      }
+
+      /* --- Quote --- */
+      .quote-block {
+        margin-top: 50px;
+        padding-left: 40px;
+        border-left: 4px solid var(--gold);
+      }
+      .quote-text {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 26px;
+        line-height: 1.5;
+        color: var(--gray-100);
+        margin-bottom: 16px;
+      }
+
+      /* --- CTA Section --- */
+      .cta-band {
+        position: relative;
+        padding: 140px 20px;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1543158043-f421fbc34d8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80")
+          center/cover fixed;
+      }
+      .cta-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.92);
+      }
+      .cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .cta-badge {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--white);
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 18px 45px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+        box-shadow: 0 10px 20px rgba(187, 127, 37, 0.3);
+      }
+      .cta-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 25px rgba(187, 127, 37, 0.4);
+        background: #a36b1d;
+      }
+
+      @media (max-width: 900px) {
+        .split-layout {
+          grid-template-columns: 1fr;
+        }
+        .image-reveal-wrapper {
+          max-height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-eyebrow gs-reveal">Investment Opportunity</div>
+        <h1 class="hero-title gs-reveal">Why <em>Zanzibar</em></h1>
+        <div class="hero-divider gs-line"></div>
+        <p class="hero-tagline gs-reveal">
+          A market where beauty is matched by absolute confidence
+        </p>
+      </div>
+    </div>
+
+    <div class="stats-wrapper">
+      <div class="stats-bar">
+        <div class="stat-item gs-stat">
+          <div class="stat-num serif">
+            <span class="counter" data-target="736">0</span>K+
+          </div>
+          <div class="stat-label">Visitors in 2024</div>
+        </div>
+        <div class="stat-item gs-stat">
+          <div class="stat-num serif">
+            +<span class="counter" data-target="15.4">0</span>%
+          </div>
+          <div class="stat-label">Tourism Growth</div>
+        </div>
+        <div class="stat-item gs-stat">
+          <div class="stat-num serif">
+            <span class="counter" data-target="21">0</span>K m²
+          </div>
+          <div class="stat-label">New Terminal</div>
+        </div>
+        <div class="stat-item gs-stat">
+          <div class="stat-num serif">2023</div>
+          <div class="stat-label">Investment Act</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="split-layout">
+        <div class="content-left">
+          <div class="section-label">The Case</div>
+          <h2 class="section-title">
+            Natural appeal reinforced by <em>real fundamentals</em>
+          </h2>
+          <p class="section-body">
+            Zanzibar's natural appeal is immediate — remarkable coastline, clear
+            water, and a cultural identity that gives the island lasting global
+            appeal. But for serious investors, beauty alone is never enough.
+          </p>
+          <p class="section-body">
+            What makes Zanzibar compelling is that its lifestyle value is now
+            being reinforced by the factors that make a market feel safer to
+            enter.
+          </p>
+          <div class="quote-block">
+            <p class="quote-text">
+              "This is not simply a beautiful island. It is a market where the
+              fundamentals increasingly support the safety of the investment
+              case as well as the upside."
+            </p>
+            <div class="section-label" style="margin-bottom: 0">
+              Investment Thesis
+            </div>
+          </div>
+        </div>
+        <div class="image-reveal-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1512100356356-de1b84283e18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            alt="Zanzibar Architecture"
+            class="gs-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-dark">
+      <div class="section" style="padding-top: 0; padding-bottom: 0">
+        <div class="section-label" style="color: var(--gold-light)">
+          Key Drivers
+        </div>
+        <h2 class="section-title" style="margin-bottom: 20px">
+          Four pillars of a <em>compelling market</em>
+        </h2>
+        <p class="section-body" style="max-width: 650px">
+          Sustained tourism growth, improving infrastructure, stronger
+          investment frameworks, and a government actively positioning to
+          attract private capital.
+        </p>
+
+        <div class="pillar-grid">
+          <div class="pillar-card gs-card">
+            <div class="pillar-icon">✈️</div>
+            <div class="pillar-title">Tourism Momentum</div>
+            <p class="pillar-desc">
+              736,755 international visitors in 2024, up 15.4% from 2023. Growth
+              backed by real international demand.
+            </p>
+          </div>
+          <div class="pillar-card gs-card">
+            <div class="pillar-icon">🏗️</div>
+            <div class="pillar-title">Infrastructure</div>
+            <p class="pillar-desc">
+              New Terminal 3 at AAKIA airport and major World Bank–backed urban
+              investment in mobility and service delivery.
+            </p>
+          </div>
+          <div class="pillar-card gs-card">
+            <div class="pillar-icon">⚖️</div>
+            <div class="pillar-title">Legal Framework</div>
+            <p class="pillar-desc">
+              Protections against nationalization, freely convertible currency
+              transfers, and access to ICSID international arbitration.
+            </p>
+          </div>
+          <div class="pillar-card gs-card">
+            <div class="pillar-icon">🌍</div>
+            <div class="pillar-title">Regional Stability</div>
+            <p class="pillar-desc">
+              Tanzania is widely regarded as one of the more politically stable
+              countries in East Africa for capital deployment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="split-layout">
+        <div class="image-reveal-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80"
+            alt="Infrastructure"
+            class="gs-img"
+          />
+        </div>
+        <div class="content-right">
+          <div class="section-label">Infrastructure</div>
+          <h2 class="section-title">Built to <em>receive</em> the world</h2>
+          <p class="section-body">
+            Stronger infrastructure reduces friction, improves accessibility,
+            and supports long-term asset value. Zanzibar's gateway is already
+            upgraded — and more is underway.
+          </p>
+          <div style="margin-top: 40px">
+            <h3 class="serif" style="font-size: 24px; margin-bottom: 10px">
+              Terminal 3 — AAKIA Airport
+            </h3>
+            <p class="section-body" style="font-size: 16px">
+              A new 21,153 m² international terminal opened in 2020, with
+              further improvements to handle volume.
+            </p>
+
+            <div
+              style="
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1);
+                margin: 24px 0;
+              "
+            ></div>
+
+            <h3 class="serif" style="font-size: 24px; margin-bottom: 10px">
+              World Bank Development
+            </h3>
+            <p class="section-body" style="font-size: 16px">
+              Major investment supporting roads, drainage, public space, and
+              planning systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <div class="cta-overlay"></div>
+      <div class="cta-content">
+        <h2 class="section-title">The <em>opportunity</em> is clear</h2>
+        <p class="section-body">
+          Scarcity of prime coastal land. Rising international demand. Legal
+          protections. Political stability. A government actively working to
+          attract private capital. This is where the investment case is made.
+        </p>
+        <a href="#" class="cta-badge">Explore the Opportunity</a>
+      </div>
+    </div>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Animations
+      const heroTl = gsap.timeline();
+      heroTl
+        .fromTo(
+          ".hero-bg",
+          { y: -50 },
+          { y: 0, duration: 2, ease: "power3.out" },
+          0,
+        )
+        .fromTo(
+          ".gs-reveal",
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out" },
+          0.5,
+        )
+        .to(
+          ".gs-line",
+          { width: "80px", duration: 1, ease: "power3.inOut" },
+          1,
+        );
+
+      gsap.to(".hero-bg", {
+        yPercent: 30,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Stats Bar
+      gsap.fromTo(
+        ".gs-stat",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".stats-wrapper",
+            start: "top 90%",
+          },
+        },
+      );
+
+      // Number Counter
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        ScrollTrigger.create({
+          trigger: counter,
+          start: "top 95%",
+          once: true,
+          onEnter: () => {
+            let target = parseFloat(counter.getAttribute("data-target"));
+            let isFloat = target % 1 !== 0;
+            gsap.to(counter, {
+              innerHTML: target,
+              duration: 2,
+              ease: "power2.out",
+              snap: { innerHTML: isFloat ? 0.1 : 1 },
+              onUpdate: function () {
+                counter.innerHTML = isFloat
+                  ? Number(this.targets()[0].innerHTML).toFixed(1)
+                  : Math.round(this.targets()[0].innerHTML);
+              },
+            });
+          },
+        });
+      });
+
+      // Fixed: Image Reveal Animations
+      gsap.utils.toArray(".image-reveal-wrapper").forEach((wrapper) => {
+        let img = wrapper.querySelector(".gs-img");
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: wrapper,
+            start: "top 85%", // Trigger earlier
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        tl.fromTo(
+          wrapper,
+          { clipPath: "inset(100% 0 0 0)" },
+          { clipPath: "inset(0% 0 0 0)", duration: 1.2, ease: "power4.inOut" },
+        ).fromTo(
+          img,
+          { scale: 1.3 },
+          { scale: 1, duration: 1.2, ease: "power4.inOut" },
+          0,
+        );
+      });
+
+      // Fixed: Text Reveal
+      gsap.utils.toArray(".content-left, .content-right").forEach((content) => {
+        gsap.fromTo(
+          content.children,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: content,
+              start: "top 85%",
+            },
+          },
+        );
+      });
+
+      // Fixed: Pillar Cards Stagger
+      gsap.fromTo(
+        ".gs-card",
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.2)",
+          scrollTrigger: {
+            trigger: ".bg-dark", // Trigger change: Changed from grid to section container
+            start: "top 60%", // Triggers way earlier when the section is in view
+          },
+        },
+      );
+
+      // Fixed: CTA Animation
+      gsap.fromTo(
+        ".cta-content > *",
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".cta-band",
+            start: "top 80%",
+          },
+        },
+      );
+    </script>
+  </body>
+</html>
